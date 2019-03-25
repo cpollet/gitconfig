@@ -27,7 +27,10 @@
         d = diff
         kd = difftool --dir-diff
         dt = difftool --dir-diff
+        ca = commit --amend
         cs = "!f() { git diff \"$1\"^! ; } ; f"
+        cm = "!f() { git commit -m \"$1\"; }; f"
+        alias = "!git config -l | grep alias | cut -c 7-"
 [diff]
         tool = kdiff3
         guitool = kdiff3
