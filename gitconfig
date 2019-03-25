@@ -22,6 +22,8 @@
         f = fetch
         p = pull
         b = branch
+        r = rebase
+        rc = rebase --continue
         aa = add --all
         bs = branch -v --all
         co = checkout
