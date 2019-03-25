@@ -21,8 +21,9 @@
         f = fetch
         p = pull
         b = branch
-        branches = branch -v --all
+        bs = branch -v --all
         co = checkout
+        d = diff
         kd = difftool --dir-diff
 [diff]
         tool = kdiff3
