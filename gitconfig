@@ -16,12 +16,13 @@
 [alias]
         gh-email = config user.email \"cpollet@users.noreply.github.com\"
         a = add
-        l = log --graph --pretty=format:'%Cblue%h %C(yellow)%d %Cgreen%ae %Cblue%ae %Creset%s' --abbrev-commit --all
+        l = log --graph --pretty=format:'%Cblue%h %C(yellow)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all
         s = status
         c = commit
         f = fetch
         p = pull
         b = branch
+        aa = add --all
         bs = branch -v --all
         co = checkout
         d = diff
