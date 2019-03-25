@@ -25,6 +25,7 @@
         co = checkout
         d = diff
         kd = difftool --dir-diff
+        dt = difftool --dir-diff
 [diff]
         tool = kdiff3
         guitool = kdiff3
