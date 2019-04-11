@@ -1,6 +1,6 @@
 [core]
         excludesfile = ~/.gitignore
-        pager = less -X
+        pager = less -FRX
 [difftool "sourcetree"]
         cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
         path = 
