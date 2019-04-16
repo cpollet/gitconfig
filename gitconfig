@@ -23,6 +23,8 @@
         p = pull
         b = branch
         r = rebase
+        t = tag
+        tl = tag -l
         rc = rebase --continue
         aa = add --all
         bs = branch -v --all
