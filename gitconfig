@@ -1,6 +1,6 @@
 [core]
         excludesfile = ~/.gitignore
-        pager = less -X
+        pager = less -FRX
 [difftool "sourcetree"]
         cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
         path = 
@@ -30,10 +30,15 @@
         bs = branch -v --all
         co = checkout
         d = diff
+        ll = "!watch -cpn1 'date ; git -c color.ui=always l'"
+        ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
+        ds = diff --staged
         kd = difftool --dir-diff
         dt = difftool --dir-diff
+        dts = difftool --dir-diff --staged
         ca = commit --amend
         cs = "!f() { git diff \"$1\"^! ; } ; f"
+        dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
         cm = "!f() { git commit -m \"$1\"; }; f"
         alias = "!git config -l | grep alias | cut -c 7-"
 [diff]
