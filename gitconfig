@@ -16,18 +16,26 @@
 [alias]
         gh-email = config user.email \"cpollet@users.noreply.github.com\"
         a = add
-        l = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all
+        l = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short
         lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit 
         s = status
+        sui = status --ignored -u
         c = commit
         f = fetch
+        fp = fetch --prune
         p = pull
         b = branch
+        bd = branch -d
+        bp = "!git branch $1 && git push origin $1"
         r = rebase
+        t = tag
+        tl = tag -l
         rc = rebase --continue
         aa = add --all
         bs = branch -v --all
         co = checkout
+        cof = checkout --force
+        cb = checkout -B
         d = diff
         ll = "!watch -cpn1 'date ; git -c color.ui=always l'"
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
@@ -40,6 +48,7 @@
         dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
         cm = "!f() { git commit -m \"$1\"; }; f"
         alias = "!git config -l | grep alias | cut -c 7-"
+        res = "!git reset --hard HEAD && git clean -dfx"
 [diff]
         tool = kdiff3
         guitool = kdiff3
