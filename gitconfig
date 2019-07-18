@@ -21,6 +21,7 @@
         s = status
         sui = status --ignored -u
         c = commit
+        cp = cherry-pick
         f = fetch
         fp = fetch --prune
         p = pull
