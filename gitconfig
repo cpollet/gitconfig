@@ -51,6 +51,7 @@
         cm = "!f() { git commit -m \"$1\"; }; f"
         alias = "!git config -l | grep alias | cut -c 7-"
         res = "!git reset --hard HEAD && git clean -dfx"
+        serve = "!git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/"
 [diff]
         tool = kdiff3
         guitool = kdiff3
