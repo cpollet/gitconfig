@@ -14,45 +14,46 @@
 [push]
         default = simple
 [alias]
-        gh-email = config user.email \"cpollet@users.noreply.github.com\"
-        m = checkout master
         a = add
-        l30 = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short -n30
-        l = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short
-        lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit 
-        s = status
-        sui = status --ignored -u
-        c = commit
-        cp = cherry-pick
-        f = fetch
-        fp = fetch --prune
-        p = pull
+        aa = add --all
+        alias = "!git config -l | grep alias | cut -c 7-"
+        ap = add --patch
         b = branch
         bd = branch -d
         bp = "!git branch $1 && git push origin $1"
+        bs = branch -v --all
+        c = commit
+        ca = commit --amend
+        cb = checkout -B
+        cm = "!f() { git commit -m \"$1\"; }; f"
+        co = checkout
+        co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+        cof = checkout --force
+        cp = cherry-pick
+        cs = "!f() { git diff \"$1\"^! ; } ; f"
+        d = diff
+        ds = diff --staged
+        dt = difftool --dir-diff
+        dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
+        dts = difftool --dir-diff --staged
+        f = fetch
+        fp = fetch --prune
+        gh-email = config user.email \"cpollet@users.noreply.github.com\"
+        kd = difftool --dir-diff
+        l = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short
+        l30 = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short -n30
+        lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit
+        ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
+        m = checkout master
+        p = pull
         r = rebase
+        rc = rebase --continue
+        res = "!git reset --hard HEAD && git clean -dfx"
+        s = status
+        serve = "!git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/"
+        sui = status --ignored -u
         t = tag
         tl = tag -l
-        rc = rebase --continue
-        aa = add --all
-        bs = branch -v --all
-        co = checkout
-        cof = checkout --force
-        cb = checkout -B
-        d = diff
-        ll = "!watch -cpn1 'date ; git -c color.ui=always l'"
-        ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
-        ds = diff --staged
-        kd = difftool --dir-diff
-        dt = difftool --dir-diff
-        dts = difftool --dir-diff --staged
-        ca = commit --amend
-        cs = "!f() { git diff \"$1\"^! ; } ; f"
-        dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
-        cm = "!f() { git commit -m \"$1\"; }; f"
-        alias = "!git config -l | grep alias | cut -c 7-"
-        res = "!git reset --hard HEAD && git clean -dfx"
-        serve = "!git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/"
 [diff]
         tool = kdiff3
         guitool = kdiff3
