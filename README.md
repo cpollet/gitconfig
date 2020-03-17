@@ -1,7 +1,7 @@
 # gitconfig
 ## Install
 ```
-curl https://raw.githubusercontent.com/cpollet/gitconfig/master/install.sh | /bin/bash
+$ curl https://raw.githubusercontent.com/cpollet/gitconfig/master/install.sh | /bin/bash
 ```
 
 # Resources
